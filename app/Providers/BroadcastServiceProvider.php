@@ -22,5 +22,9 @@ class BroadcastServiceProvider extends ServiceProvider
         Broadcast::auth('App.User.*', function ($user, $userId) {
             return (int) $user->id === (int) $userId;
         });
+
+        Broadcast::auth('Clipboard.*', function ($user, $userId) {
+            return true;
+        });
     }
 }
